@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar" class="hidden">
+        <div class="nav-left">
+            <h2>SkillSwap</h2>
+        </div>
+        <div class="nav-right">
+            <span id="welcome-user"></span>
+            <button id="profile-btn">My Profile</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- AUTH FORMS -->
+    <div id="auth-container">
+        <section id="signup">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username">
+            <input type="email" id="signup-email" placeholder="Email">
+            <input type="password" id="signup-password" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+            <p id="signup-message"></p>
+        </section>
+
+        <section id="login">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+        </section>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" class="hidden">
+        <h2>Available Skills</h2>
+
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search skills..." class="search-input" />
+
+        <div id="skill-list" class="skill-list"></div>
+
+        <!-- Skill Posting Form -->
+        <section id="post-skill">
+            <h2>Post a New Skill</h2>
+            <input type="text" id="skill-name" placeholder="Skill Name">
+            <input type="text" id="skill-description" placeholder="Description">
+            <button onclick="postSkill()">Add Skill</button>
+            <p id="skill-message"></p>
+        </section>
+    </div>
+
+    <!-- PROFILE MODAL -->
+    <div id="profile-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-profile" class="close-btn">&times;</span>
+            <h2>My Profile</h2>
+            <p><strong>Username:</strong> <span id="profile-username"></span></p>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+
+            <h3>My Posted Skills</h3>
+            <div id="my-skills" class="skill-list"></div>
+
+            <h3>Swap Requests I Sent</h3>
+            <div id="sent-swaps" class="skill-list"></div>
+
+            <h3>Swap Requests I Received</h3>
+            <div id="received-swaps" class="skill-list"></div>
+        </div>
+    </div>
+
+    <!-- SWAP MODAL -->
+    <div id="swap-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-swap-modal" class="close-btn">&times;</span>
+            <h2>Send Swap Request</h2>
+            <p><strong>To Skill:</strong> <span id="swap-skill-name"></span></p>
+            <textarea id="swap-message" placeholder="Write a short message..."></textarea>
+            <button id="submit-swap">Send Request</button>
+            <p id="swap-status-msg"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
